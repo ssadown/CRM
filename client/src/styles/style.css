@@ -54,6 +54,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   position: relative;
 }
 
@@ -65,6 +66,14 @@ main {
   align-items: center;
   flex-direction: column;
   position: relative;
+  min-height: 400px;
+}
+
+.standart-textarea {
+  border-radius: 16px;
+  border: 1px solid #963F41;
+  outline: 0;
+  text-indent: 15px;
 }
 
 .standart-input {
@@ -184,6 +193,89 @@ main {
   height: 50%;
   width: 50%;
   cursor: pointer;
+}
+
+.user-tasklist {
+  width: 100%;
+  height: unset;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 300px;
+}
+
+.user-task__block {
+  width: 70%;
+  height: 300px;
+  border: 1px solid #963F41;
+  display: flex;
+  border-radius: 16px;
+  margin-top: 20px;
+  min-height: 75px;
+  max-height: 100px;
+}
+
+.user-task__info {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.user-task__info h3 {
+  font-size: 2vh;
+  height: 50%;
+  line-height: 0;
+}
+.user-task__info h4 {
+  font-size: 2vh;
+  height: 50%;
+  line-height: 0;
+}
+
+.user-task__description {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-task__description p {
+  font-size: 1.7vh;
+}
+
+.user-task__status {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-task__status p {
+  font-size: 1.7vh;
+}
+
+.status-block {
+  width: 80%;
+  height: 50%;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.check {
+  background-color: #963F41;
+}
+
+.doing {
+  background-color: #658796;
+}
+
+.complete {
+  background-color: #5A8836;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,8 +1,8 @@
 const sql = require('../db')
 class User {
     async addUser(req,res) {
-        const { user_name, user_password, user_role} = req.body
-        const newUser = await sql.query(`INSERT INTO users (user_name, user_password, user_role) VALUES ($1,$2,$3) RETURNING *`, [user_name, user_password, user_role])
+        const { user_name, user_password, user_role, user_nickname, user_departament} = req.body
+        const newUser = await sql.query(`INSERT INTO users (user_name, user_password, user_role, user_nickname, user_departament) VALUES ($1,$2,$3,$4,$5) RETURNING *`, [user_name, user_password, user_role, user_nickname, user_departament])
         res.json(newUser.rows[0])
     }
     async getUsers(req, res) {

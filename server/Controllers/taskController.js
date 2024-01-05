@@ -3,8 +3,8 @@ const sql = require('../db');
 class Tasks {
     async addTask(req,res) {
         try {
-            const {task_id, user_name} = req.body;
-            const newTask = await sql.query('INSERT INTO tasklist (task_id, user_name) VALUES ($1,$2) RETURNING *', [task_id, user_name]);
+            const {task_id, user_name, description, user_ip, user_id} = req.body;
+            const newTask = await sql.query('INSERT INTO tasklist (task_id, user_name, description, user_ip, user_id) VALUES ($1,$2,$3,$4,$5) RETURNING *', [task_id, user_name, description, user_ip, user_id]);
             res.json(newTask.rows[0]);
         } catch (error) {
             console.error(error);

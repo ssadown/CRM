@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { LoginContext, UserContext } from './Context/Context';
+import { DescriptionContext, LoginContext, UserContext } from './Context/Context';
 import LoginPage from './Pages/LoginPage';
 import './styles/style.css'
 import axios from 'axios';
@@ -10,6 +10,7 @@ import AdminPage from './Pages/AdminPage';
 const App = () => {
   const [isLogin, setLogin] = useState(false)
   const [userInfo, setUserInfo] = useState({})
+  const [userDescriptionTask, setUserDescriptionTask] = useState('')
   useEffect(() => {
     if (localStorage.getItem('login')) {
         setLogin(true)
@@ -37,16 +38,18 @@ const App = () => {
   );
   } else if (isLogin && userInfo.user_role === 'Пользователь') {
     return (
-      <UserContext.Provider value={{userInfo, setUserInfo}}>
-      <LoginContext.Provider value={{isLogin, setLogin}}>
-        <BrowserRouter>
-          <Routes>
-            <Route exact path="/user" element={<UserPage/>}/>
-            <Route exact path="*" element={<Navigate to="/user" replace/>}/>
-          </Routes>
-        </BrowserRouter> 
-      </LoginContext.Provider>
-    </UserContext.Provider>
+      <DescriptionContext.Provider value={{userDescriptionTask, setUserDescriptionTask}}>
+        <UserContext.Provider value={{userInfo, setUserInfo}}>
+          <LoginContext.Provider value={{isLogin, setLogin}}>
+            <BrowserRouter>
+              <Routes>
+                <Route exact path="/user" element={<UserPage/>}/>
+                <Route exact path="*" element={<Navigate to="/user" replace/>}/>
+              </Routes>
+            </BrowserRouter> 
+          </LoginContext.Provider>
+        </UserContext.Provider>
+      </DescriptionContext.Provider>
     )
   } else if (isLogin && userInfo.user_role === 'Администратор') {
     return (    <UserContext.Provider value={{userInfo, setUserInfo}}>
