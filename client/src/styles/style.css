@@ -12,7 +12,7 @@ html, body {
 header {
   height: 10%;
   width: 100%;
-  background-color: #B32D30;
+  background-color: #963F41;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,13 +71,13 @@ main {
   height: 10%;
   width: 40%;
   border-radius: 16px;
-  border: 1px solid #B32D30;
+  border: 1px solid #963F41;
   outline: 0;
   text-indent: 15px;
 }
 
 .standart-input:focus {
-  border: 1px solid #FF7373;
+  border: 1px solid #963F41;
 }
 
 .standart-input::-webkit-input-placeholder {
@@ -131,7 +131,7 @@ main {
   border-radius: 16px;
   transition-duration: 0.5s;
   border: 0;
-  background-color: #B32D30;
+  background-color: #963F41;
   outline: 0;
 }
 .standart-button p {
@@ -139,14 +139,14 @@ main {
 }
 
 .standart-button:hover {
-  background-color: #FF7373;
+  background-color: #B32D30;
 }
 
 .admin-task-block {
   height: 15%;
   width: 100%;
   display: flex;
-  border: 1px solid #B32D30;
+  border: 1px solid #963F41;
   border-radius: 16px;
   justify-content: space-between;
 }
