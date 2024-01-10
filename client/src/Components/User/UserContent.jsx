@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Button from '../Helpers/Button';
-import { usePostTask } from '../Hooks/usePostTask';
-import { UserContext } from '../Context/Context';
-import Textarea from '../Helpers/Textarea';
+import Button from '../../Helpers/Button';
+import { usePostTask } from '../../Hooks/usePostTask';
+import { UserContext } from '../../Context/Context';
+import Textarea from '../../Helpers/Textarea';
 import UserTaskList from './UserTaskList';
 
 const UserContent = () => {

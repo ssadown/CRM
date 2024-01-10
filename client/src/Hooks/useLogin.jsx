@@ -12,6 +12,7 @@ export const useLogin = (user_nickname, password) => {
         if (user_nickname === getInfoUserDB.data.user_nickname && password === getInfoUserDB.data.user_password) {
             localStorage.setItem('login', 'true')
             localStorage.setItem(`nickname`, `${user_nickname}`)
+            localStorage.setItem(`user_id`, `${getInfoUserDB.data.user_id}`)
             userInfoContext.setUserInfo(getInfoUserDB.data)
             isLoginContext.setLogin(true)
         } else {

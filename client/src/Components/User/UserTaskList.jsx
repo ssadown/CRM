@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import UserTaskBlock from './User/UserTaskBlock';
+import UserTaskBlock from './UserTaskBlock';
 import axios from 'axios';
-import { UserContext } from '../Context/Context';
+import { UserContext } from '../../Context/Context';
 
 const UserTaskList = () => {
     const [taskList, setTaskList] = useState([])

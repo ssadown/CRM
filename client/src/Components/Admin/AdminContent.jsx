@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { useGetTasks } from "../Hooks/useGetTasks"
-import Block from "./Admin/Block"
+import { useGetTasks } from "../../Hooks/useGetTasks"
+import TaskBlock from "./TaskBlock"
 
 const AdminContent = () => {
     const { getTasks } = useGetTasks()
@@ -8,8 +8,12 @@ const AdminContent = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const fetchedTasks = await getTasks()
-            setTasks(fetchedTasks)
+            try {
+                const fetchedTasks = await getTasks()
+                setTasks(fetchedTasks)
+            } catch(error) {
+                console.log(error)
+            }
         }
         fetchData()
     }, [getTasks])
@@ -17,10 +21,13 @@ const AdminContent = () => {
     if (tasks.length > 0) {
         return (
             <main>
+                <div className="tasks-content__header">
+                    <h1>Задачи</h1>
+                </div>
                 <div className="content-main">
                     {tasks.map((task) => {
                         return (
-                            <Block user_name={task.user_name} task_id={task.task_id}/>
+                            <TaskBlock tasks={task} key={task.task_id}/>
                         )
                     })}
                 </div>
@@ -29,6 +36,9 @@ const AdminContent = () => {
     } else {
         return (
             <main>
+                <div className="tasks-content__header">
+                    <h1>Задачи</h1>
+                </div>
                 <div className="content-main">
                     <h1>Все задачи выполнены!</h1>
                 </div>

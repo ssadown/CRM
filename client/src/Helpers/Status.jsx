@@ -6,7 +6,7 @@ const Status = (props) => {
             props.taskStatus === 'Рассматривается' ? 'status-block check' :
             props.taskStatus === 'Выполняется' ? 'status-block doing' :
             props.taskStatus === 'Готово' ? 'status-block complete' :
-            ''
+            'status-block complete'
             }>
             <p>Статус: {props.taskStatus}</p>
         </div>

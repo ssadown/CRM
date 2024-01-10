@@ -12,6 +12,17 @@ class Tasks {
         }
     }
 
+    async putTask (req, res) {
+        try {
+            const {status, task_id} = req.body
+            const updateTask = await sql.query(`UPDATE tasklist SET status = $1 where task_id = $2 RETURNING *`, [status, task_id])
+            res.json(updateTask.rows)
+        } catch (error) {
+            console.error(error)
+            res.status(500).json({ error: 'Failed to update task'})
+        }
+    }
+
     async getTasks(req, res) {
         try {
             const getTasks = await sql.query('SELECT * FROM tasklist');

@@ -8,6 +8,7 @@ export const useExit = () => {
     const exit = async () => {
             localStorage.removeItem('login')
             localStorage.removeItem(`nickname`)
+            localStorage.removeItem(`user_id`)
             userInfoContext.setUserInfo({})
             isLoginContext.setLogin(false)
     }

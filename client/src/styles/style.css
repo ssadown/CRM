@@ -26,6 +26,19 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+nav a {
+  font-size: 1.2vw;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition-duration: 0.7s;
+  box-shadow: inset 0px 0px 0px 0px #658796;
+  border-radius: 12px;
+}
+nav a:hover {
+  box-shadow: inset 200px 0px 0px 0px #658796;
+}
 nav h1 {
   font-size: 2vw;
   color: #fff;
@@ -52,14 +65,14 @@ main {
   height: 90%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   position: relative;
 }
 
 .content-main {
-  height: 60%;
+  height: 90%;
   width: 70%;
   display: flex;
   justify-content: space-around;
@@ -157,42 +170,57 @@ main {
   display: flex;
   border: 1px solid #963F41;
   border-radius: 16px;
-  justify-content: space-between;
+  justify-content: center;
+  max-height: 400px;
 }
 
 .user-task {
-  height: 80%;
+  height: 100%;
   width: 30%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-left: 20px;
 }
 .user-task h3 {
   text-align: center;
-  font-size: 70%;
+  font-size: 2vh;
+  line-height: 0;
 }
 .user-task h4 {
-  font-size: 50%;
+  font-size: 1.6vh;
+  line-height: 0;
 }
 
-.delete-task {
+.user-task__description-admin {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  word-wrap: break-word;
+  align-items: center;
+}
+.user-task__description-admin p {
+  font-size: 0.6vw;
+  width: 100%;
+}
+
+.status-task {
   height: 100%;
   width: 30%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
-.delete-task button {
-  border: 0;
-  outline: 0;
-  background-color: transparent;
-}
-.delete-task img {
+
+.status-task__info-part {
   height: 50%;
-  width: 50%;
-  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .user-tasklist {
@@ -240,9 +268,11 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  word-wrap: break-word;
 }
 .user-task__description p {
-  font-size: 1.7vh;
+  font-size: 0.6vw;
+  width: 100%;
 }
 
 .user-task__status {
@@ -257,13 +287,14 @@ main {
 }
 
 .status-block {
-  width: 80%;
+  width: 60%;
   height: 50%;
-  border-radius: 24px;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
+  font-size: 1vw;
 }
 
 .check {
@@ -276,6 +307,191 @@ main {
 
 .complete {
   background-color: #5A8836;
+}
+
+.confirm {
+  background-color: #396617;
+}
+
+.tasks-content__header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+}
+.tasks-content__header h1 {
+  font-size: 5.1vh;
+}
+
+.status-button {
+  border: 0;
+  cursor: pointer;
+}
+
+.users-list__block {
+  height: 90%;
+  width: 100%;
+  display: flex;
+}
+
+.users-list_add-block {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.users-list_add-block input {
+  margin-top: 20px;
+  width: 80%;
+  height: 5vh;
+  border: 1px solid #963F41;
+  border-radius: 16px;
+  text-indent: 15px;
+}
+.users-list_add-block select {
+  margin-top: 20px;
+  width: 80%;
+  height: 5vh;
+  border: 1px solid #963F41;
+  border-radius: 16px;
+}
+.users-list_add-block button {
+  margin-top: 20px;
+  width: 80%;
+  height: 5vh;
+  background-color: #963F41;
+  border-radius: 16px;
+  transition-duration: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  color: #fff;
+}
+.users-list_add-block button:hover {
+  background-color: #658796;
+}
+
+.error-text {
+  font-size: 1vw;
+  display: none;
+  color: #963F41;
+}
+
+.show-error {
+  display: block !important;
+}
+
+.users-list__content {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-list__block-of-user {
+  height: 25%;
+  width: 80%;
+  display: flex;
+  border: 1px solid #963F41;
+  border-radius: 16px;
+  margin-top: 20px;
+  min-height: 200px;
+  max-height: 400px;
+}
+
+.user-list__info-about-user {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+}
+.user-list__info-about-user p {
+  font-size: 1vw;
+  line-height: 0;
+  margin-left: 20px;
+}
+
+.user-list__button-of-user {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+}
+.user-list__button-of-user button {
+  width: 40%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #963F41;
+  border-radius: 16px;
+  transition-duration: 0.5s;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+}
+.user-list__button-of-user button:hover {
+  background-color: #658796;
+}
+
+.modal-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-block {
+  height: 70%;
+  width: 50%;
+  border-radius: 24px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal-block input {
+  margin-top: 20px;
+  width: 80%;
+  height: 5vh;
+  border: 1px solid #963F41;
+  border-radius: 16px;
+  text-indent: 15px;
+}
+.modal-block select {
+  margin-top: 20px;
+  width: 80%;
+  height: 5vh;
+  border: 1px solid #963F41;
+  border-radius: 16px;
+}
+.modal-block button {
+  margin-top: 20px;
+  width: 80%;
+  height: 5vh;
+  background-color: #963F41;
+  border-radius: 16px;
+  transition-duration: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  color: #fff;
+}
+.modal-block button:hover {
+  background-color: #658796;
 }
 
 /*# sourceMappingURL=style.css.map */
