@@ -2,7 +2,7 @@ import axios from 'axios'
 import { LoginContext, UserContext } from '../Context/Context'
 import { useContext } from 'react'
 
-export const useLogin = (user_nickname, password) => {
+export const useLogin = (user_nickname, password, setError) => {
     const isLoginContext = useContext(LoginContext)
     const userInfoContext = useContext(UserContext)
 
@@ -15,7 +15,9 @@ export const useLogin = (user_nickname, password) => {
             localStorage.setItem(`user_id`, `${getInfoUserDB.data.user_id}`)
             userInfoContext.setUserInfo(getInfoUserDB.data)
             isLoginContext.setLogin(true)
+            setError(false)
         } else {
+            setError(true)
             return ('Пароль, либо логин, неправильные!')
         }
     }

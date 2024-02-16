@@ -202,7 +202,7 @@ main {
   align-items: center;
 }
 .user-task__description-admin p {
-  font-size: 0.6vw;
+  font-size: 1vw;
   width: 100%;
 }
 
@@ -271,7 +271,7 @@ main {
   word-wrap: break-word;
 }
 .user-task__description p {
-  font-size: 0.6vw;
+  font-size: 1vw;
   width: 100%;
 }
 
